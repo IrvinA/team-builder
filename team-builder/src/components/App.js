@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Form from "./TeamForm";
+import Member from "./TeamMember";
 
 const membersList = [];
 
@@ -42,7 +44,7 @@ function App() {
       <h1>New Members Sign Up!</h1>
 
       {error &&<h2 className='error-text'>{error}</h2>}
-      <TeamForm
+      <Form
         update={updateForm}
         submit={submitForm}
         values={formValues}
@@ -51,7 +53,7 @@ function App() {
       {
         members.map(member => {
           return (
-            <TeamMember key={member.id} details={member} />
+            <Member key={member.id} details={member} />
           )
         })
       }
