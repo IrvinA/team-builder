@@ -15,7 +15,7 @@ export default function Form(props) {
     }
 
     return (
-        <form onsubmit={onSubmit}>
+        <form onSubmit={onSubmit}>
             <div>
                 <label>Name
                     <input
@@ -32,9 +32,11 @@ export default function Form(props) {
                     <input
                         type="number"
                         name="age"
-                        placeholder="Enter your Age"
+                        placeholder="Enter Age"
                         onChange={onChange}
                         value={values.age}
+                        min="1"
+                        max="100"
                     />
                 </label>
 

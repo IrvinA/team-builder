@@ -7,7 +7,9 @@ import Member from "./TeamMember";
 
 // `
 
-const membersList = [];
+const membersList = [
+  // { name: "Irvin", age: "27", email: "arevalosirvin@gmail.com", role: "Web Developer"}
+];
 
 const initialFormValues = { name: "", age:"", email:"", role:"" }
 
@@ -40,7 +42,7 @@ function App() {
       setError("");
     }
 
-    setMembers([newMember, ...members]);
+    setMembers(members.concat(newMember));
     setFormValues(initialFormValues);
   }
 
@@ -48,7 +50,7 @@ function App() {
     <div>
       <h1>New Members Sign Up!</h1>
 
-      {error && <h2>{error}</h2>}
+      {error &&<h2>{error}</h2>}
       <Form
         update={updateForm}
         submit={submitForm}
@@ -56,9 +58,9 @@ function App() {
       />
 
       {
-        members.map(member => {
+        members.map((member, idx) => {
           return (
-            <Member key={member.id} details={member} />
+            <Member key={idx} details={member} />
           )
         })
       }
