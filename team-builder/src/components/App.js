@@ -1,11 +1,51 @@
 import React, { useState } from "react";
 import Form from "./TeamForm";
 import Member from "./TeamMember";
-// import styled from "styled-components";
+import styled from "styled-components";
 
-// const StyledDiv = styled.div`
+const StyledDiv = styled.div`
+  margin: 5%;
+  text-align: center;
 
-// `
+  h1 {
+    font-size: 5rem;
+    color: black;
+    text-shadow: 2px 2px 4px lime;
+  }
+
+  h2 {
+    color: darkblue;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px lime;
+    font-size: 2rem;
+    border-bottom: 2px solid black;
+    margin: 2% 40% 0;
+  }
+
+  h4 {
+    color: red;
+    text-shadow: 2px 2px 4px black;
+    font-size: 2rem;
+  }
+
+  p {
+    text-align: left;
+    margin-left: 25%;
+    color: darkblue;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px lime;
+    font-size: 1.5rem;
+  }
+
+  span {
+    padding: 0 2%;
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+    text-shadow: none;
+    border-bottom: 1px dotted black;
+  }
+`
 
 const membersList = [
   // { name: "Irvin", age: "27", email: "arevalosirvin@gmail.com", role: "Web Developer"}
@@ -47,10 +87,10 @@ function App() {
   }
 
   return (
-    <div>
+    <StyledDiv>
       <h1>New Members Sign Up!</h1>
 
-      {error &&<h2>{error}</h2>}
+      {error &&<h4>{error}</h4>}
       <Form
         update={updateForm}
         submit={submitForm}
@@ -64,7 +104,7 @@ function App() {
           )
         })
       }
-    </div>
+    </StyledDiv>
   );
 }
 

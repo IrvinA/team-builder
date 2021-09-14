@@ -1,5 +1,45 @@
 import React from "react";
-// import styled from "styled-components";
+import styled from "styled-components";
+
+const StyledForm = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    label {
+        font-weight: 600;
+        text-shadow: 2px 2px 4px lime;
+    }
+
+    h3 {
+        background-color: black;
+        border: 1px solid black;
+        color: white;
+        margin: 1% 25%;
+        padding: 2% 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    input, select {
+        width: 25%;
+        background-color: black;
+        padding: 2%;
+        text-shadow: 2px 2px 4px lime;
+        font-weight: 600;
+        color: white;
+    }
+
+    button {
+        margin-top: 2%;
+        padding: 2% 3%;
+        font-size: 1.5rem;
+        background-color: black;
+        color: white;
+        text-shadow:  2px 2px 2px lime;
+
+    }
+`
 
 export default function Form(props) {
     const { update, submit, values } = props;
@@ -16,8 +56,9 @@ export default function Form(props) {
 
     return (
         <form onSubmit={onSubmit}>
-            <div>
-                <label>Name
+            <StyledForm>
+                <label>
+                    <h3>Name</h3>
                     <input
                         type="text"
                         name="name"
@@ -28,7 +69,8 @@ export default function Form(props) {
                     />
                 </label>
 
-                <label>Age
+                <label>
+                    <h3>Age</h3>
                     <input
                         type="number"
                         name="age"
@@ -40,7 +82,8 @@ export default function Form(props) {
                     />
                 </label>
 
-                <label>Email
+                <label>
+                    <h3>Email</h3>
                     <input
                         type="email"
                         name="email"
@@ -50,7 +93,8 @@ export default function Form(props) {
                     />
                 </label>
 
-                <label>Role
+                <label>
+                    <h3>Role</h3>
                     <select value={values.role} name="role" onChange={onChange}>
                         <option value="">-- Select a Role --</option>
                         <option value="WD">Web Developer</option>
@@ -66,7 +110,7 @@ export default function Form(props) {
                 <div>
                     <button>Submit</button>
                 </div>
-            </div>
+            </StyledForm>
         </form>
     )
 }
