@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import Form from "./TeamForm";
 import Member from "./TeamMember";
+// import styled from "styled-components";
+
+// const StyledDiv = styled.div`
+
+// `
 
 const membersList = [];
 
@@ -40,10 +45,10 @@ function App() {
   }
 
   return (
-    <div className='container'>
+    <div>
       <h1>New Members Sign Up!</h1>
 
-      {error &&<h2 className='error-text'>{error}</h2>}
+      {error && <h2>{error}</h2>}
       <Form
         update={updateForm}
         submit={submitForm}
